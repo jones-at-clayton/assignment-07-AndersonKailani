@@ -1,0 +1,77 @@
+h1{
+    color: gold;
+    shape-rendering: crispEdges;
+}
+img{
+    float: left ;
+    border-radius: 8px;
+}
+body{
+    background-color: darkolivegreen;
+    color: goldenrod;
+
+}
+
+.wrapper{
+	width: 100%;
+}
+
+.img-blue {
+	display: none;
+}
+
+.img-info{
+	width: 100%
+}
+
+.img-info h2{
+	padding: 30px 30px 20px;
+	font-family: arial;
+	font-size: 40px;
+	color :forestgreen;
+	line-height: 44px;
+
+}
+
+.img-info p{
+	padding: 0px 30px 20px;
+	font-family: arial;
+	font-size: 20px;
+	color :green;
+	line-height: 24px;
+
+}
+
+.img-summer{
+width: 100%
+}
+
+@media only screen and (min-width: 768px) {
+.img-blue {
+	display: block;
+	width:100%;
+	padding-bottom: 30px;
+}
+.wrapper {
+	width: 600px;
+
+	margin: 0 auto;
+
+}
+.img-info h2{
+	padding: 20px 0px 0px;
+	
+	
+}
+
+.img-info p{
+	padding: 20px 0px 0px;
+
+
+}
+.img-summer{
+padding-top: 30px;
+}
+}
+
+

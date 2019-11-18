@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Rain Forrest Donation Page</title>
+    <link rel="stylesheet" type="text/css" href="Pickles.css"/>
+    <meta name="author" content="Kailani Anderson">
+    <meta name="description" content="This page features ways for those who want to donate to pay.">
+</head>
+<body>
+<p>
+    This page is made for  <em>people who care about our Forrest</em>,and want to help out <strong>by donation!</strong>
+   All donations are greatly appreciated🌸😊
+
+</p>
+
+<h1></h1>
+<form>
+    <input type="radio" name="fixed payment amount" value="five" checked> 5$<br>
+    <input type="radio" name="fixed payment amount" value="ten"> 10$<br>
+    <input type="radio" name="fixed payment amount" value="twentyfive"> 25$
+</form>
+<form>
+    <fieldset>
+        <legend>Create A Username And Password </legend>
+        <p>
+            <label>Username</label>
+            <input type = "text"
+                   id = "myText"
+                   value="username"
+                    />
+        </p>
+        <p>
+            <label>Password</label>
+            <input type = "password"
+            id = "myPwd"
+            value = "secret"
+            />
+        </p>
+        <p>
+        <form action="/my-handling-form-page" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+                <label for="mail">E-mail:</label>
+                <input type="email" id="mail" name="user_mail">
+            </div>
+            <div>
+                <label for="msg">Encouraging Message To Those Helping The Restorations:</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </div>
+        </form>
+        </p>
+    </fieldset>
+</form>
+<input type="checkbox" name="Donation1" value="onetime"> I would like to donate just once<br>
+<input type="checkbox" name="donation2" value="twotime"> I would like to donate monthly<br>
+<input type="checkbox" name="donation3" value="threetime" checked> I have a annually<br>
+
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form action="/action_page.php">
+
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Billing Address</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="text" id="email" name="email" placeholder="john@example.com">
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                        <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                        <input type="text" id="city" name="city" placeholder="New York">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="state">State</label>
+                                <input type="text" id="state" name="state" placeholder="NY">
+                            </div>
+                            <div class="col-50">
+                                <label for="zip">Zip</label>
+                                <input type="text" id="zip" name="zip" placeholder="10001">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-50">
+                        <h3>Payment</h3>
+                        <label for="fname">Accepted Cards</label>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <label for="cname">Name on Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                        <label for="ccnum">Credit card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                        <label for="expmonth">Exp Month</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="expyear">Exp Year</label>
+                                <input type="text" id="expyear" name="expyear" placeholder="2018">
+                            </div>
+                            <div class="col-50">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="352">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <label>
+                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                </label>
+                <input type="submit" value="Continue to checkout" class="btn">
+            </form>
+            <select>
+                <option value="volvo">1 Time Payment</option>
+                <option value="saab">2 time Payment</option>
+                <option value="mercedes">3 time payment</option>
+            </select>
+        </div>
+    </div>
+
+</div>
+<a href="Amazon.html" target="_blank" >Back to Main Page</a>
+<button onclick="myFunction()">SUBMIT</button>
+
+<script>
+    function myFunction() {
+        alert("Thank You For Donating!");
+    }
+</script>
+
+<div id="paypal-button"></div>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    paypal.Button.render({
+// Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'demo_sandbox_client_id',
+            production: 'demo_production_client_id'
+        },
+// Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'small',
+            color: 'gold',
+            shape: 'pill',
+        },
+// Set up a payment
+        payment: function (data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        total: '0.01',
+                        currency: 'USD'
+                    }
+                }]
+            });
+        },
+// Execute the payment
+        onAuthorize: function (data, actions) {
+            return actions.payment.execute()
+                .then(function () {
+// Show a confirmation message to the buyer
+                    window.alert('Thank you for your purchase!');
+                });
+        }
+    }, '#paypal-button');
+</script>
+</body>
+</html>
